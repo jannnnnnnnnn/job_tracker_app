@@ -1,9 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+import requests
 # Define the home view
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+
+
+# def jobs_Index(request):
+def jobresults(request):
+    API = "https://cloud.google.com/jobs-api/"
+    res = requests.get(API)
+    data = res.json()
+    print(data)
+    return render(request, 'jobresults.html/')
+
+
+def search(request):
+    return render(request, 'search.html/')
 
 
 def home(request):
