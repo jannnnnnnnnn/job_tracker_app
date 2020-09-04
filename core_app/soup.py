@@ -7,5 +7,5 @@ page = requests.get(
 soup = BeautifulSoup(page.content, 'html5lib')
 allp = soup.find_all("h2", class_="title")
 print(allp)
-return render(request, 'search.html/', context)
+return render(request, 'search.html', context)
 # print(soup.find(id="resultsCol")
