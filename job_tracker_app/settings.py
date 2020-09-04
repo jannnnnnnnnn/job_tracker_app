@@ -40,6 +40,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'core_app',
+    'cities_light',
     'django_countries',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -87,6 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'jobtracker',
+        'USER': config('POSTGRES_USER'),
+        'PASSWORD': config('POSTGRES_PASSWORD')
     }
 }
 
@@ -129,3 +132,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/youloggedinright/'
+
+CITIES_LIGHT_INCLUDE_COUNTRIES = ["US", "CA"]
