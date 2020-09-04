@@ -41,6 +41,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'core_app',
     'cities_light',
+    'phone_field',
     'django_countries',
     'django.contrib.admin',
     'django.contrib.auth',
