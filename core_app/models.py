@@ -11,3 +11,9 @@ class Profile(models.Model):
     state = models.CharField(max_length=50)
     zipcode = models.CharField(max_length=50)
     country = CountryField(blank_label='(select country)')
+
+
+class Skills(models.Model):
+    skills = models.CharField(max_length=200)
+    def __str__(self):
+     return '%s' % (self.skills)
