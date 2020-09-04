@@ -11,7 +11,7 @@ def hello(request):
 
 
 def home(request):
-    return HttpResponse('Hello')
+  return render(request, 'home.html')
 
 
 def signup(request):
