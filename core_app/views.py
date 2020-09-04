@@ -6,6 +6,10 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
 
+def hello(request):
+    return HttpResponse('hi')
+
+
 def home(request):
     return HttpResponse('Hello')
 
