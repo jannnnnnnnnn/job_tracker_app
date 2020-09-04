@@ -7,12 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Job Tracker App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
-  <body class="home">
+  <body>
     <header class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
@@ -33,17 +43,14 @@
                 placeholder="Search..."
               />
               <button id="search_submit" type="submit">Submit</button>
-            </form>          
+            </form>
           </ul>
         </div>
       </nav>
     </header>
     <main class="container">{% block content %} {% endblock %}</main>
     <footer class="page-footer">
-      <div class="right">
-        All Rights Reserved, &copy; 2020 Athena&nbsp;
-      </div>
+      <div class="right">All Rights Reserved, &copy; 2020 Athena&nbsp;</div>
     </footer>
   </body>
 </html>
-
