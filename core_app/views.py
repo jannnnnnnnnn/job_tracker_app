@@ -13,6 +13,9 @@ def hello(request):
 def home(request):
   return render(request, 'home.html')
 
+def search(request):
+    return render(request, 'main_app/search.html')
+
 
 def signup(request):
     error_message = ''
