@@ -31,6 +31,9 @@ def home(request):
 def profile(request):
     return render(request, 'profile.html')
 
+def apptracker(request):
+    return render(request, 'apptracker.html')
+
 
 def signup(request):
     error_message = ''
