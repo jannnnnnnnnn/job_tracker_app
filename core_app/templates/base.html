@@ -22,6 +22,17 @@
           </ul>
           <ul class="right">
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            <form method="get" action="search/">
+              {% csrf_token %}
+              <input
+                id="search_box"
+                type="text"
+                name="search_box"
+                placeholder="Search..."
+              />
+              <button id="search_submit" type="submit">Submit</button>
+            </form>          
           </ul>
         </div>
       </nav>
@@ -34,3 +45,4 @@
     </footer>
   </body>
 </html>
+
