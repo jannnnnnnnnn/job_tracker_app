@@ -11,4 +11,9 @@ main {
 footer.page-footer {
   padding-top: 0;
   text-align: right;
+  background-color: blueviolet
+}
+
+.nav-wrapper {
+  background-color: blueviolet
 }
