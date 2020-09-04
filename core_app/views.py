@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import requests
@@ -24,7 +25,11 @@ def hello(request):
 
 
 def home(request):
-    return HttpResponse('Hello')
+    return render(request, 'home.html')
+
+
+def profile(request):
+    return render(request, 'profile.html')
 
 
 def signup(request):

@@ -7,26 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Job Tracker App</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/style.css' %}"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
-  <body>
+  <body class="home">
     <header class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
           <ul>
             <li>
-              <a href="/" class="left brand-logo">&nbsp;&nbsp;Job_Tracker</a>
+              <a href="/" class="left brand-logo">&nbsp;&nbsp;Athena</a>
             </li>
           </ul>
           <ul class="right">
@@ -41,7 +32,7 @@
                 placeholder="Search..."
               />
               <button id="search_submit" type="submit">Submit</button>
-            </form>
+            </form>          
           </ul>
         </div>
       </nav>
@@ -49,8 +40,9 @@
     <main class="container">{% block content %} {% endblock %}</main>
     <footer class="page-footer">
       <div class="right">
-        All Rights Reserved, &copy; 2020 Job_Tracker&nbsp;
+        All Rights Reserved, &copy; 2020 Athena&nbsp;
       </div>
     </footer>
   </body>
 </html>
+
