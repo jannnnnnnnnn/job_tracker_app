@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from django_countries.fields import CountryField
+from django_countries.fields import CountryField
 
 
 class Profile(models.Model):
@@ -10,4 +10,4 @@ class Profile(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=50)
     zipcode = models.CharField(max_length=50)
-    # country = CountryField()
+    country = CountryField(blank_label='(select country)')
