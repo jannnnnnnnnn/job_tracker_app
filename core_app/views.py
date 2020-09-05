@@ -5,6 +5,8 @@ import requests
 # Define the home view
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from .models import Profile, Industry, Skill
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from bs4 import BeautifulSoup
 import requests
@@ -23,8 +25,22 @@ def search(request):
 def home(request):
     return render(request, 'home.html')
 
+
 def profile(request):
-    return render(request, 'main_app/profile.html')
+    profile = Profile.objects.get(user=request.user)
+    # skills_profile_doesnt_have = Skill.objects.exclude(
+    #     id__in=profile.currentskill_set.all().values_list('id'))
+
+    # We need skill template forms to be rendered in the template, and we need industry form to render in ProfileUpdate
+    # skill_form = SkillForm()
+    # industry_form=IndustryForm()
+
+    return render(request, 'main_app/profile.html', {
+        'profile': profile,
+        # '_form': skill_form,
+        # 'skills': skills_profile_doesnt_have
+    })
+
 
 def apptracker(request):
     return render(request, 'main_app/apptracker.html')

@@ -11,4 +11,3 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('apptracker/', views.apptracker, name='apptracker')
 ]
-
