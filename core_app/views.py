@@ -46,6 +46,14 @@ def apptracker(request):
     return render(request, 'main_app/apptracker.html')
 
 
+def profile_form(request):
+    return render(request, 'main_app/profile_form.html')
+
+
+def savedjobs(request):
+    return render(request, 'main_app/savedjobs.html')
+
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
