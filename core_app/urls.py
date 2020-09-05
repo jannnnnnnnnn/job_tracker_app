@@ -8,7 +8,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', views.signup, name='signup'),
     path('search/', views.search, name='search'),
-    path('profile/', views.search, name='profile'),
-    path('apptracker/', views.search, name='apptracker')
+    path('profile/', views.profile, name='profile'),
+    path('apptracker/', views.apptracker, name='apptracker')
 ]
 

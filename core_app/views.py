@@ -20,10 +20,6 @@ def search(request):
     return render(request, 'search.html/', {'alltitles': alltitles})
 
 
-def hello(request):
-    return HttpResponse('hi')
-
-
 def home(request):
     return render(request, 'home.html')
 
