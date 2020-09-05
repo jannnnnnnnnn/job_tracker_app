@@ -5,17 +5,17 @@ from phone_field import PhoneField
 
 
 class Industry(models.Model):
-    industries = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
 
     def __str__(self):
-        return '%s' % (self.industries)
+        return '%s' % (self.name)
 
 
 class Skill(models.Model):
-    skills = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
 
     def __str__(self):
-        return '%s' % (self.skills)
+        return '%s' % (self.name)
 
 
 class Profile(models.Model):
@@ -32,26 +32,28 @@ class Profile(models.Model):
     # country = models.ForeignKey(Country, on_delete=models.CASCADE)
     gender = models.CharField(
         max_length=1, choices=SEX, blank=False, default="")
+    skills = models.ManyToManyField(Skill)
+    industries = models.ManyToManyField(Industry)
 
     def __str__(self):
         return self.user.username
 
 
-class Currentskill(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
+# class Currentskill(models.Model):
+#     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+#     skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
 
 
-class Desiredskill(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
+# class Desiredskill(models.Model):
+#     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+#     skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
 
 
-class Currentindustry(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    industry = models.ForeignKey(Skill, on_delete=models.CASCADE)
+# class Currentindustry(models.Model):
+#     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+#     industry = models.ForeignKey(Skill, on_delete=models.CASCADE)
 
 
-class Desiredindustry(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    industry = models.ForeignKey(Skill, on_delete=models.CASCADE)
+# class Desiredindustry(models.Model):
+#     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+#     industry = models.ForeignKey(Skill, on_delete=models.CASCADE)
