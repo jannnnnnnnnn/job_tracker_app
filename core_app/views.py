@@ -23,12 +23,11 @@ def search(request):
 def home(request):
     return render(request, 'home.html')
 
-
 def profile(request):
-    return render(request, 'profile.html')
+    return render(request, 'main_app/profile.html')
 
 def apptracker(request):
-    return render(request, 'apptracker.html')
+    return render(request, 'main_app/apptracker.html')
 
 
 def signup(request):
