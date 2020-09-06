@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'job_tracker_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jobtracker2',
+        'NAME': 'jobtracker',
         'USER': config('POSTGRES_USER'),
         'PASSWORD': config('POSTGRES_PASSWORD')
     }
@@ -132,7 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = 'main_app/profile_form/'
+LOGIN_REDIRECT_URL = '/search/'
 LOGOUT_REDIRECT_URL = '/'
 
 CITIES_LIGHT_TRANSLATION_LANGUAGES = ['en']
