@@ -10,7 +10,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from bs4 import BeautifulSoup
 import requests
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def search(request):
     print(request)
@@ -47,7 +47,7 @@ def apptracker(request):
     
 
 
-def profile_form(request):
+def profile_create(request):
     return render(request, 'main_app/profile_form.html')
 
 
@@ -62,9 +62,21 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')
+            return redirect('profile_create')
         else:
             error_message = 'Invalid sign up - try again'
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html/', context)
+
+
+class ProfileCreate(LoginRequiredMixin, CreateView):
+    model = Profile
+    fields = '__all__'
+
+    # overiding the built in form submit handling in order to add the ability to add our incoming user to the cat
+    def form_valid(self, form):
+        # Assign the logged in user (self.request.user)
+        form.instance.user = self.request.user  # form.instance is the cat
+        # Let the CreateView do its job as usual
+        return super().form_valid(form)
