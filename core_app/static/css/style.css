@@ -1,3 +1,5 @@
+
+
 body {
   display: flex;
   min-height: 100vh;
@@ -31,4 +33,9 @@ footer.page-footer {
   padding-top: 50px;
   margin-left: -40px;
   text-shadow: 2px 2px black;
+}
+
+.left-brand-logo {
+font-family: 'Signika';
+font-size: 30px;
 }

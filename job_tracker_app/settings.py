@@ -41,6 +41,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'core_app',
     'cities_light',
+    'phone_field',
     'django_countries',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,6 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = '/youloggedinright/'
+LOGIN_REDIRECT_URL = 'main_app/profile_form/'
+LOGOUT_REDIRECT_URL = '/'
 
+CITIES_LIGHT_TRANSLATION_LANGUAGES = ['en']
 CITIES_LIGHT_INCLUDE_COUNTRIES = ["US", "CA"]
