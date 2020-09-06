@@ -44,6 +44,7 @@ def profile(request):
 
 def apptracker(request):
     return render(request, 'main_app/apptracker.html')
+    
 
 
 def profile_form(request):
