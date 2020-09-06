@@ -57,3 +57,4 @@ class Profile(models.Model):
 # class Desiredindustry(models.Model):
 #     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 #     industry = models.ForeignKey(Skill, on_delete=models.CASCADE)
+
