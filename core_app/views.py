@@ -62,9 +62,9 @@ def search(request):
     return render(request, 'main_app/search.html', {'mergedtitleurl': mergedtitleurl, 'range': range(30)})
 
 
-# def save_job(request, user_id, job_id):
-#   Jobs.objects.get(id=user_id).jobs.save(job_id)
-#   return redirect('detail', user_id=user_id)
+def save_job(request, user_id, job_id):
+    Jobs.objects.get(id=user_id).jobs.save(job_id)
+    return redirect('search', user_id=user_id)
 
 
 def home(request):
