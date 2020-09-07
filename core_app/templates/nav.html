@@ -32,9 +32,9 @@
             </li>
           </ul>
           <ul class="right">
+            <li><a href="{% url 'savedjobs' %}">Saved Jobs</a></li>
             <li><a href="{% url 'profile' %}">Profile</a></li>
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
             <form method="get" action="search/">
               {% csrf_token %}
               <input
