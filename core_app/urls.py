@@ -10,6 +10,6 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('profile/', views.profile, name='profile'),
     path('apptracker/', views.apptracker, name='apptracker'),
-    path('profile_form/', views.ProfileCreate.as_view(), name='profile_create'),
+    path('profile_form/', views.ProfileCreate.as_view(), name='profile_form'),
     path('savedjobs/', views.savedjobs, name='savedjobs')
 ]
