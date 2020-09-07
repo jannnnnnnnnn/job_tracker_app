@@ -39,3 +39,7 @@ footer.page-footer {
 font-family: 'Signika';
 font-size: 30px;
 }
+.btn {
+  background-color: blue;
+  color: white;
+}
