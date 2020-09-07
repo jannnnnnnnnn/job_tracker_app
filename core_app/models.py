@@ -18,6 +18,16 @@ class Skill(models.Model):
         return '%s' % (self.name)
 
 
+class Savedjob(models.Model):
+    title = models.TextField()
+    url = models.URLField()
+    company = models.TextField()
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+
 class Profile(models.Model):
     SEX = (
         ('M', 'Male'),
@@ -34,6 +44,7 @@ class Profile(models.Model):
         max_length=1, choices=SEX, blank=False, default="")
     skills = models.ManyToManyField(Skill)
     industries = models.ManyToManyField(Industry)
+    savedjobs = models.ManyToManyField(Savedjob)
 
     def __str__(self):
         return self.user.username
@@ -57,4 +68,3 @@ class Profile(models.Model):
 # class Desiredindustry(models.Model):
 #     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 #     industry = models.ForeignKey(Skill, on_delete=models.CASCADE)
-
