@@ -92,7 +92,7 @@ def apptracker(request):
 
 
 def profile_create(request):
-    return render(request, 'main_app/profile_form.html')
+    return render(request, 'core_app/profile_form.html')
 
 
 def savedjobs(request):
