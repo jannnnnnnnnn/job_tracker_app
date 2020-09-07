@@ -12,6 +12,7 @@ from urllib.request import urlopen
 import requests
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 def search(request):
     print('hello123')
     searchquery = request.GET.get('search_box')
@@ -86,10 +87,8 @@ def profile(request):
     })
 
 
-
 def apptracker(request):
     return render(request, 'main_app/apptracker.html')
-    
 
 
 def profile_create(request):
@@ -116,7 +115,7 @@ def signup(request):
 
 
 class ProfileCreate(LoginRequiredMixin, CreateView):
-    model = Profile
+    model = Profile, Skill
     fields = '__all__'
 
     # overiding the built in form submit handling in order to add the ability to add our incoming user to the cat
