@@ -80,12 +80,12 @@ def profile(request):
     #     id__in=profile.currentskill_set.all().values_list('id'))
 
     # We need skill template forms to be rendered in the template, and we need industry form to render in ProfileUpdate
-    # skill_form = SkillForm()
+    skill_form = SkillForm()
     # industry_form=IndustryForm()
 
     return render(request, 'main_app/profile.html', {
         'profile': profile,
-        # '_form': skill_form,
+        'skill_form': skill_form,
         # 'skills': skills_profile_doesnt_have
     })
 
@@ -141,11 +141,14 @@ class ProfileUpdate(UpdateView):
     success_url = '/profile/'
 
 
-def add_skill(request, user):
+def add_skill(request):
+    print("i am in add_skill")
     form = SkillForm(request.POST)
-    skill_form = SkillForm()
     if form.is_valid():
         new_skill = form.save(commit=False)
-        new_skill.user = user
+        new_skill.profile = request.user
         new_skill.save()
-    return redirect('profile/', user=user)
+    profile = Profile.objects.get(user=request.user)
+    this_skill = Skill.objects.get(id=new_skill.id)
+    profile.skills.add(this_skill)
+    return redirect('profile')
