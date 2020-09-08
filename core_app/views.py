@@ -25,6 +25,8 @@ def search(request):
         "h2", class_="jobposting-title")
     htmlTextAll = soup.find_all(
         "h2", class_="jobposting-title")
+    if not htmltext:
+        return render(request, 'main_app/error.html/')
     htmlatags = htmltext.find('a').get_text()
     htmlalinks = htmltext.find('a')
     joblinks = htmlalinks['href']

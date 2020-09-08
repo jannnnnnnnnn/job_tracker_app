@@ -1,4 +1,4 @@
-{% extends 'nav2.html' %} {% block content %}
+{% extends 'nav.html' %} {% block content %}
 <h1>Search for your career</h1>
 <style>
   body {
@@ -52,21 +52,50 @@
       <input type="submit" class="btn" value="Save Job" />
     </form>
   </li>
+  <li>
+    <a href="{{ mergedtitleurl.1.5 }}"><h5>{{ mergedtitleurl.0.5 }}</h5></a>
+    <p>{{ mergedtitleurl.2.5 }}</p>
+    <p>{{ mergedtitleurl.3.5 }}</p>
+    <form method="post" action="{% url 'savedjobs' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" class="btn" value="Save Job" />
+    </form>
+  </li>
+  <li>
+    <a href="{{ mergedtitleurl.1.6 }}"><h5>{{ mergedtitleurl.0.6 }}</h5></a>
+    <p>{{ mergedtitleurl.2.6 }}</p>
+    <p>{{ mergedtitleurl.3.6 }}</p>
+    <form method="post" action="{% url 'savedjobs' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" class="btn" value="Save Job" />
+    </form>
+  </li>
+  <li>
+    <a href="{{ mergedtitleurl.1.7 }}"><h5>{{ mergedtitleurl.0.7 }}</h5></a>
+    <p>{{ mergedtitleurl.2.7 }}</p>
+    <p>{{ mergedtitleurl.3.7 }}</p>
+    <form method="post" action="{% url 'savedjobs' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" class="btn" value="Save Job" />
+    </form>
+  </li>
+  <li>
+    <a href="{{ mergedtitleurl.1.8 }}"><h5>{{ mergedtitleurl.0.8 }}</h5></a>
+    <p>{{ mergedtitleurl.2.8 }}</p>
+    <p>{{ mergedtitleurl.3.8 }}</p>
+    <form method="post" action="{% url 'savedjobs' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" class="btn" value="Save Job" />
+    </form>
+  </li>
+  <li>
+    <a href="{{ mergedtitleurl.1.9 }}"><h5>{{ mergedtitleurl.0.9 }}</h5></a>
+    <p>{{ mergedtitleurl.2.9 }}</p>
+    <p>{{ mergedtitleurl.3.9 }}</p>
+    <form method="post" action="{% url 'savedjobs' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" class="btn" value="Save Job" />
+    </form>
+  </li>
 </ul>
-
-{% if object %}
-<h1>Edit <span class="teal-text">{{object.name}}</span></h1>
-{% else %}
-<h1>Saved Job</h1>
-{% endif %}
-<!-- Leaving the action empty makes the form post to the same url used to display it -->
-<form action="" method="post">
-  <!-- Django requires the following for security purposes -->
-  {% csrf_token %}
-  <table>
-    <!-- Render the inputs inside of <tr>s & <td>s -->
-    {{ form.as_table }}
-  </table>
-  <input type="submit" value="Submit!" class="btn" />
-</form>
-{{alltitles}} {% endblock %}
+{% endblock %}
