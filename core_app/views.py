@@ -65,7 +65,7 @@ def search(request):
 
 def save_job(request, user_id, job_id):
     Jobs.objects.get(id=user_id).jobs.save(job_id)
-    return redirect('search', user_id=user_id)
+    return redirect('savedjobs', user_id=user_id)
 
 
 def home(request):
