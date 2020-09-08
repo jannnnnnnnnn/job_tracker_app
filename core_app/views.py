@@ -123,16 +123,20 @@ def signup(request):
     return render(request, 'registration/signup.html/', context)
 
 
-class ProfileCreate(LoginRequiredMixin, CreateView):
+class ProfileCreate(CreateView):
     model = Profile
-    fields = ['phone', 'city']
+    fields = ['phone', 'city', 'gender', 'zipcode']
 
-    # overiding the built in form submit handling in order to add the ability to add our incoming user to the cat
     def form_valid(self, form):
-        # Assign the logged in user (self.request.user)
-        form.instance.user = self.request.user  # form.instance is the cat
-        # Let the CreateView do its job as usual
+        form.instance.user = self.request.user
         return super().form_valid(form)
+    success_url = '/profile/'
+
+
+class ProfileUpdate(UpdateView):
+    model = Profile
+    fields = ['phone', 'city', 'zipcode']
+    success_url = '/profile/'
 
 
 def add_skill(request, user):
