@@ -17,4 +17,9 @@
   <a href="{% url 'profile_update' profile.id %}">Edit Profile</a>
 </button>
 
+<form action="{% url 'add_skill' %}" method="post">
+  {% csrf_token %}
+  {{ skill_form.as_p }}
+  <input type="submit" class="btn" value="Add Skill">
+</form>
 {{alltitles}}{% endblock %}

@@ -15,4 +15,6 @@ urlpatterns = [
     path('landingpage/', views.landingpage, name='landingpage'),
     path('profile/<int:pk>/update/',
          views.ProfileUpdate.as_view(), name='profile_update'),
+    path('profile/add_skill/', views.add_skill, name='add_skill'),
+
 ]
