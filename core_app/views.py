@@ -91,6 +91,10 @@ def apptracker(request):
     return render(request, 'main_app/apptracker.html')
 
 
+def landingpage(request):
+    return render(request, 'main_app/landingpage.html')
+
+
 def profile_create(request):
     return render(request, 'core_app/profile_form.html')
 
