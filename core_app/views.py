@@ -91,6 +91,10 @@ def apptracker(request):
     return render(request, 'main_app/apptracker.html')
 
 
+def searchpage(request):
+    return render(request, 'main_app/searchpage.html')
+
+
 def landingpage(request):
     return render(request, 'main_app/landingpage.html')
 
