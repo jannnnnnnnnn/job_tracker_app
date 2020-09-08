@@ -35,7 +35,6 @@ class Profile(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = PhoneField(blank=True, help_text='Contact phone number')
-    address = models.CharField(max_length=50, null=True, blank=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
     # state = models.ForeignKey(Region, on_delete=models.CASCADE)
     zipcode = models.CharField(max_length=50)

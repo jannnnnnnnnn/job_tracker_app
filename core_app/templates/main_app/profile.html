@@ -1,20 +1,18 @@
 {% extends 'nav2.html' %} {% block content %}
 <h2>Build your profile</h2>
-{{ profile.user }}<br>
-{{ profile.phone }}<br>
-{{ profile.address }}<br>
-{{ profile.city }}<br>
-{{ profile.zipcode }}<br>
-{{ profile.gender }}<br>
+{{ profile.user }}<br />
+{{ profile.phone }}<br />
+{{ profile.address }}<br />
+{{ profile.city }}<br />
+{{ profile.zipcode }}<br />
+{{ profile.gender }}<br />
 <p>Skills:</p>
-{% for skill in  profile.skills.all %}
-  {{ skill.name}}<br>
+{% for skill in profile.skills.all %} {{ skill.name}}<br />
 {% endfor %}
 
 <p>Industries:</p>
-{% for industry in  profile.industries.all %}
-  {{ industry.name}}<br>
+{% for industry in profile.industries.all %} {{ industry.name}}<br />
 {% endfor %}
-
+<button><a href="{% url 'profile_create' %}">Edit Profile</a></button>
 
 {{alltitles}}{% endblock %}

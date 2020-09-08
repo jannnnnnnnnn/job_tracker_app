@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import requests
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import SkillForm, IndustryForm, SavedjobForm
 
 
 def search(request):
@@ -92,7 +93,7 @@ def apptracker(request):
 
 
 def searchpage(request):
-    return render(request, 'main_app/searchpage.html')
+    return render(request, 'main_app/landingpage.html')
 
 
 def landingpage(request):
@@ -123,8 +124,8 @@ def signup(request):
 
 
 class ProfileCreate(LoginRequiredMixin, CreateView):
-    model = Profile, Skill
-    fields = '__all__'
+    model = Profile
+    fields = ['phone', 'city']
 
     # overiding the built in form submit handling in order to add the ability to add our incoming user to the cat
     def form_valid(self, form):
@@ -132,3 +133,13 @@ class ProfileCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user  # form.instance is the cat
         # Let the CreateView do its job as usual
         return super().form_valid(form)
+
+
+def add_skill(request, user):
+    form = SkillForm(request.POST)
+    skill_form = SkillForm()
+    if form.is_valid():
+        new_skill = form.save(commit=False)
+        new_skill.user = user
+        new_skill.save()
+    return redirect('profile/', user=user)
