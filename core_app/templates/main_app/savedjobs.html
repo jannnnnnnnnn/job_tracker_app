@@ -1,14 +1,16 @@
-{% extends 'nav2.html' %} {% block content %} {% if object %}
+{% extends 'nav.html' %} {% block content %} {% if object %}
 <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
 {% else %}
-<h1>Delete Job</h1>
+<h1>Your saved jobs</h1>
 {% endif %}
-<form action="" method="post">
+  <li>
+    <a href="{{ mergedtitleurl.1.2 }}"><h5>{{ mergedtitleurl.0.2 }}</h5></a>
+    <form method="post" action="{% url 'savedjobs' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" class="btn" value="Save Job" />
+    </form>
+  </li>
   <!-- Django requires the following for security purposes -->
   {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
-  <input type="submit" value="Submit!" class="btn" />
 </form>
 {% endblock %}
