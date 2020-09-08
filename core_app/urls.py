@@ -14,7 +14,7 @@ urlpatterns = [
     path('searchpage/', views.searchpage, name='searchpage'),
     path('profile/', views.profile, name='profile'),
     path('apptracker/', views.apptracker, name='apptracker'),
-    path('profile_form/', views.ProfileCreate.as_view(), name='profile_form'),
+    path('profile_form/', views.ProfileCreate.as_view(), name='profile_create'),
     path('savedjobs/', views.savedjobs, name='savedjobs'),
-    path('landingpage/', views.landingpage, name='landingpage')
+    path('landingpage/', views.landingpage, name='landingpage'),
 ]
