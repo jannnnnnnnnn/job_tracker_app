@@ -13,6 +13,8 @@
 <p>Industries:</p>
 {% for industry in profile.industries.all %} {{ industry.name}}<br />
 {% endfor %}
-<button><a href="{% url 'profile_create' %}">Edit Profile</a></button>
+<button>
+  <a href="{% url 'profile_update' profile.id %}">Edit Profile</a>
+</button>
 
 {{alltitles}}{% endblock %}
