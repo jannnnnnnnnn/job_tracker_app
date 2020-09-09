@@ -44,6 +44,7 @@ class Profile(models.Model):
     skills = models.ManyToManyField(Skill)
     industries = models.ManyToManyField(Industry)
     savedjobs = models.ManyToManyField(Savedjob)
+    searchquery = models.CharField(max_length=100)
 
     def __str__(self):
         return self.user.username
