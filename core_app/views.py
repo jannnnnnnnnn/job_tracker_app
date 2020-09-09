@@ -15,7 +15,13 @@ from .forms import SkillForm, IndustryForm, SavedjobForm
 
 
 def search(request):
+    profile = Profile.objects.get(user=request.user)
     searchquery = request.GET.get('search_box')
+    if searchquery:
+        profile.searchquery = searchquery
+        profile.save()
+    else:
+        searchquery = profile.searchquery
     url = f"https://www.simplyhired.ca/search?q={searchquery}&l=Toronto"
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
