@@ -12,8 +12,10 @@
     <p>{{ mergedtitleurl.2.0 }}</p>
     <p>{{ mergedtitleurl.3.0 }}</p>
     <form method="post" action="{% url 'savejob' %}">
-      {% csrf_token %} {{ savejob_form.as_p }}
-      
+      {% csrf_token %} 
+      <div style="visibility: hidden">
+      {{ savejob_form.as_p }}
+    </div>
       <input type="submit" class="btn" value="Save Job" />
     </form>
   </li>
