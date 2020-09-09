@@ -1,6 +1,8 @@
 {% extends 'nav.html' %} {% block content %}
 <h2>Build your profile</h2>
-<p>Name: {{ profile.user }}</p>
+<p>Name: {{ profile.user.first_name }}</p>
+<p>Name: {{ profile.user.last_name }}</p>
+<p>Name: {{ profile.user.email }}</p>
 <p>Phone: {{ profile.phone }}</p>
 <p>City: {{ profile.city }}</p>
 <p>Postal code: {{ profile.zipcode }}</p>
@@ -17,8 +19,7 @@
 </button>
 
 <form action="{% url 'add_skill' %}" method="post">
-  {% csrf_token %}
-  {{ skill_form.as_p }}
-  <input type="submit" class="btn" value="Add Skill">
+  {% csrf_token %} {{ skill_form.as_p }}
+  <input type="submit" class="btn" value="Add Skill" />
 </form>
 {{alltitles}}{% endblock %}
