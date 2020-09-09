@@ -8,16 +8,6 @@ main {
   flex: 1 0 auto;
 }
 
-footer.page-footer {
-  padding-top: 0;
-  text-align: right;
-  background-color: blueviolet;
-}
-
-.nav-wrapper {
-  background-color: blueviolet;
-}
-
 .landing {
   text-align: bottom;
   color: white;
@@ -68,6 +58,25 @@ li {
   background-size: cover;
   min-width: 120wh;
   animation-name: example;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes example1 {
+  from  {background-color: blueviolet;}
+  to  {background-color: #B477ED;}
+}
+footer.page-footer {
+  padding-top: 0;
+  text-align: right;
+  animation-name: example1;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  
+}
+.nav-wrapper {
+  animation-name: example1;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
