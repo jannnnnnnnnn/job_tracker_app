@@ -7,98 +7,19 @@
 </style>
 <h3>List of Jobs</h3>
 <ul>
+{% for job in listofjobs %}
   <li>
-    <a href="{{ mergedtitleurl.1.0 }}"><h5>{{ mergedtitleurl.0.0 }}</h5></a>
-    <p>{{ mergedtitleurl.2.0 }}</p>
-    <p>{{ mergedtitleurl.3.0 }}</p>
+    <a hred="{{job.1}}"><h5>{{job.0}}</h5>
+    <p>{{job.2}}</p>
+    <p>{{job.3}}</p>
     <form method="post" action="{% url 'savejob' %}">
       {% csrf_token %} 
       <div class="hidden">
-      {{ savejob_form.as_p }}
-    </div>
+        {{ job.4.as_p }}
+      </div>
       <input type="submit" class="btn" value="Save Job" />
     </form>
   </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.1 }}"><h5>{{ mergedtitleurl.0.1 }}</h5></a>
-    <p>{{ mergedtitleurl.2.1 }}</p>
-    <p>{{ mergedtitleurl.3.1 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.2 }}"><h5>{{ mergedtitleurl.0.2 }}</h5></a>
-    <p>{{ mergedtitleurl.2.2 }}</p>
-    <p>{{ mergedtitleurl.3.2 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.3 }}"><h5>{{ mergedtitleurl.0.3 }}</h5></a>
-    <p>{{ mergedtitleurl.2.3 }}</p>
-    <p>{{ mergedtitleurl.3.3 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.4 }}"><h5>{{ mergedtitleurl.0.4 }}</h5></a>
-    <p>{{ mergedtitleurl.2.4 }}</p>
-    <p>{{ mergedtitleurl.3.4 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.5 }}"><h5>{{ mergedtitleurl.0.5 }}</h5></a>
-    <p>{{ mergedtitleurl.2.5 }}</p>
-    <p>{{ mergedtitleurl.3.5 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.6 }}"><h5>{{ mergedtitleurl.0.6 }}</h5></a>
-    <p>{{ mergedtitleurl.2.6 }}</p>
-    <p>{{ mergedtitleurl.3.6 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.7 }}"><h5>{{ mergedtitleurl.0.7 }}</h5></a>
-    <p>{{ mergedtitleurl.2.7 }}</p>
-    <p>{{ mergedtitleurl.3.7 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.8 }}"><h5>{{ mergedtitleurl.0.8 }}</h5></a>
-    <p>{{ mergedtitleurl.2.8 }}</p>
-    <p>{{ mergedtitleurl.3.8 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <li>
-    <a href="{{ mergedtitleurl.1.9 }}"><h5>{{ mergedtitleurl.0.9 }}</h5></a>
-    <p>{{ mergedtitleurl.2.9 }}</p>
-    <p>{{ mergedtitleurl.3.9 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
+{% endfor  %}
 </ul>
 {% endblock %}
