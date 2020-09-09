@@ -68,6 +68,6 @@ li {
   background-size: cover;
   min-width: 120wh;
   animation-name: example;
-  animation-duration: 8s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
 }
