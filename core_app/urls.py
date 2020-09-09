@@ -12,6 +12,8 @@ urlpatterns = [
     path('apptracker/', views.apptracker, name='apptracker'),
     path('profile_form/', views.ProfileCreate.as_view(), name='profile_create'),
     path('savedjobs/', views.savedjobs, name='savedjobs'),
+    path('landingpage/search/savejob', views.savejob, name='savejob'),
+
     path('landingpage/', views.landingpage, name='landingpage'),
     path('profile/<int:pk>/update/',
          views.ProfileUpdate.as_view(), name='profile_update'),

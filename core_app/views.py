@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Define the home view
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, Industry, Skill
+from .models import Profile, Industry, Skill, Savedjob
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from bs4 import BeautifulSoup
@@ -15,9 +15,7 @@ from .forms import SkillForm, IndustryForm, SavedjobForm
 
 
 def search(request):
-    print('hello123')
     searchquery = request.GET.get('search_box')
-    print(searchquery)
     url = f"https://www.simplyhired.ca/search?q={searchquery}&l=Toronto"
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
@@ -62,7 +60,9 @@ def search(request):
         allJobTitles["snippet"].append(snippet)
         mergedtitleurl = (
             allJobTitles["title"], allJobTitles["url"], allJobTitles["company"], allJobTitles["snippet"])
-    return render(request, 'main_app/search.html', {'mergedtitleurl': mergedtitleurl, 'range': range(30)})
+    savejob_form = SavedjobForm({
+        'title': mergedtitleurl[0][0], 'url': mergedtitleurl[1][0], 'company': mergedtitleurl[2][0], 'description': mergedtitleurl[3][0]})
+    return render(request, 'main_app/search.html', {'mergedtitleurl': mergedtitleurl, 'range': range(30), 'savejob_form': savejob_form})
 
 
 def save_job(request, user_id, job_id):
@@ -146,9 +146,20 @@ def add_skill(request):
     form = SkillForm(request.POST)
     if form.is_valid():
         new_skill = form.save(commit=False)
-        new_skill.profile = request.user
         new_skill.save()
     profile = Profile.objects.get(user=request.user)
     this_skill = Skill.objects.get(id=new_skill.id)
     profile.skills.add(this_skill)
     return redirect('profile')
+
+
+def savejob(request):
+    print("i am in saving job function")
+    form = SavedjobForm(request.POST)
+    if form.is_valid():
+        new_job = form.save(commit=False)
+        new_job.save()
+    profile = Profile.objects.get(user=request.user)
+    this_job = Savedjob.objects.get(id=new_job.id)
+    profile.savedjobs.add(this_job)
+    return redirect('search')
