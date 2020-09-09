@@ -40,6 +40,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'materializecssform',
     'core_app',
     'cities_light',
     'phone_field',
