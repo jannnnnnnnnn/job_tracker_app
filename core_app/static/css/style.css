@@ -49,8 +49,12 @@ li {
   color: black;
 }
 @keyframes example {
-  from {background-image: url(https://i.imgur.com/X9d9ldD.jpg)}
-  to {background-image: url(https://i.imgur.com/cIV3xyA.jpg)}
+  from {
+    background-image: url(https://i.imgur.com/X9d9ldD.jpg);
+  }
+  to {
+    background-image: url(https://i.imgur.com/cIV3xyA.jpg);
+  }
 }
 
 .home {
@@ -62,10 +66,13 @@ li {
   animation-iteration-count: infinite;
 }
 
-
 @keyframes example1 {
-  from  {background-color: blueviolet;}
-  to  {background-color: #B477ED;}
+  from {
+    background-color: blueviolet;
+  }
+  to {
+    background-color: #b477ed;
+  }
 }
 footer.page-footer {
   padding-top: 0;
@@ -73,10 +80,13 @@ footer.page-footer {
   animation-name: example1;
   animation-duration: 10s;
   animation-iteration-count: infinite;
-  
 }
 .nav-wrapper {
   animation-name: example1;
   animation-duration: 10s;
   animation-iteration-count: infinite;
+}
+
+.hidden {
+  display: none;
 }
