@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import requests
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import SkillForm, IndustryForm, SavedjobForm
+from .forms import SkillForm, IndustryForm, SavedjobForm, UserForm
 
 
 def search(request):
@@ -81,11 +81,13 @@ def profile(request):
 
     # We need skill template forms to be rendered in the template, and we need industry form to render in ProfileUpdate
     skill_form = SkillForm()
+    user_form = UserForm()
     # industry_form=IndustryForm()
 
     return render(request, 'main_app/profile.html', {
         'profile': profile,
         'skill_form': skill_form,
+        'user_form': user_form
         # 'skills': skills_profile_doesnt_have
     })
 
