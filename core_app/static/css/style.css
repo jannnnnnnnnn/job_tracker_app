@@ -40,6 +40,10 @@ h3 {
   background-color: blueviolet;
   color: white;
 }
+.btn:hover {
+  background-color: #B477ED;
+  color: white;
+}
 
 p {
   color: black;
