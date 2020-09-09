@@ -11,8 +11,9 @@
     <a href="{{ mergedtitleurl.1.0 }}"><h5>{{ mergedtitleurl.0.0 }}</h5></a>
     <p>{{ mergedtitleurl.2.0 }}</p>
     <p>{{ mergedtitleurl.3.0 }}</p>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
+    <form method="post" action="{% url 'savejob' %}">
+      {% csrf_token %} {{ savejob_form.as_p }}
+      
       <input type="submit" class="btn" value="Save Job" />
     </form>
   </li>
