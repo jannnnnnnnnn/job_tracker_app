@@ -4,7 +4,7 @@
 <p id="profile">First Name: {{ profile.user.first_name }}</p>
 <p id="profile">Last Name: {{ profile.user.last_name }}</p>
 <p id="profile">Email: {{ profile.user.email }}</p>
-<p id"profile">Phone: {{ profile.phone }}</p>
+<p id="profile">Phone: {{ profile.phone }}</p>
 <p id="profile">City: {{ profile.city }}</p>
 <p id="profile">Postal code: {{ profile.zipcode }}</p>
 <p id="profile">Gender: {{ profile.gender }}</p>
@@ -15,8 +15,8 @@
 ><br />
 {% endfor %}
 
-<p>Industries:</p>
-{% for industry in profile.industries.all %} {{ industry.name}}<br />
+<p id="profile">Industries:</p>
+<p id="profile">{% for industry in profile.industries.all %} {{ industry.name}}</p><br />
 {% endfor %}
 <button>
   <a href="{% url 'profile_update' profile.id %}">Edit Profile</a>
