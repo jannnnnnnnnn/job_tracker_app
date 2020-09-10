@@ -1,13 +1,14 @@
 {% extends 'nav.html' %} {% block content %}
+<body class="profile">
 <h2>Build your profile</h2>
-<p>First Name: {{ profile.user.first_name }}</p>
-<p>Last Name: {{ profile.user.last_name }}</p>
-<p>Email: {{ profile.user.email }}</p>
-<p>Phone: {{ profile.phone }}</p>
-<p>City: {{ profile.city }}</p>
-<p>Postal code: {{ profile.zipcode }}</p>
-<p>Gender: {{ profile.gender }}</p>
-<p>Skills:</p>
+<p id="profile">First Name: {{ profile.user.first_name }}</p>
+<p id="profile">Last Name: {{ profile.user.last_name }}</p>
+<p id="profile">Email: {{ profile.user.email }}</p>
+<p id"profile">Phone: {{ profile.phone }}</p>
+<p id="profile">City: {{ profile.city }}</p>
+<p id="profile">Postal code: {{ profile.zipcode }}</p>
+<p id="profile">Gender: {{ profile.gender }}</p>
+<p id="profile">Skills:</p>
 {% for skill in profile.skills.all %} {{ skill.name}}<br /><a
   href="{% url 'skill_delete' skill.id %}"
   >Delete</a
@@ -23,6 +24,7 @@
 
 <form action="{% url 'add_skill' %}" method="post">
   {% csrf_token %} {{ skill_form.as_p }}
-  <input type="submit" class="btn" value="Add Skill" />
+  <input font color:"black" type="submit" class="btn" value="Add Skill" />
 </form>
+</body>
 {{alltitles}}{% endblock %}
