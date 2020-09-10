@@ -1,148 +1,204 @@
 @media only screen and (min-width: 700px) {
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
+  main {
+    flex: 1 0 auto;
+  }
 
-main {
-  flex: 1 0 auto;
-}
+  h3 {
+    color: white;
+    text-shadow: 2px 2px black;
+    text-align: left, middle;
+  }
 
-h3 {
-  color: white;
-  text-shadow: 2px 2px black;
-  text-align: left, middle;
-}
+  .landing {
+    text-align: bottom;
+    color: white;
+    padding-top: 50px;
+    margin-left: -40px;
+    text-shadow: 2px 2px black;
+    font-family: "Signika";
+  }
 
-.landing {
-  text-align: bottom;
-  color: white;
-  padding-top: 50px;
-  margin-left: -40px;
-  text-shadow: 2px 2px black;
-}
+  .landingpage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 5s ease-in-out;
+    background-image: url(https://i.imgur.com/WMyiOID.jpg);
+  }
 
-.landingpage {
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: background-image 5s ease-in-out;
-  background-image:url(https://i.imgur.com/WMyiOID.jpg);
-}
+  .landingpage.left {
+    color: white;
+    text-indent: left;
+    font-family: "Signika";
+  }
+  .landingpage.left:hover {
+    color: black;
+    font-family: "Signika";
+  }
 
-.landingpage.left {
-  color: white;
-  text-indent:left;
-}
-.landingpage.left:hover {
+  .landingpage:hover {
+    background-image: url(https://i.imgur.com/AYgxAlJ.jpg);
+  }
+  .card1 {
+    background-color: white;
+    background-size: cover;
+    transition: background-color 8s ease-in-out;
+    min-width: 100vh;
+    animation-iteration-count: infinite;
+    font-family: "Signika";
+  }
+  .card1:hover {
+    background-color: #DBDBDB;
+    animation-iteration-count: infinite;
+    font-family: "Signika";
+  }
+
+  ::placeholder {
+    color: white;
+    font-family: "Signika";
+  }
+
+  .left-brand-logo {
+    font-family: "Signika";
+    font-size: 30px;
+  }
+
+  .btn {
+    background-color: blueviolet;
+    color: white;
+    font-family: "Signika";
+  }
+  .btn:hover {
+    background-color: #b477ed;
+    color: white;
+    font-family: "Signika";
+  }
+
+  input.btn {
+    background-color: blueviolet;
+    color: white;
+    font-family: "Signika";
+  }
+  input.btn:hover {
+    background-color: #b477ed;
+    color: white;
+    font-family: "Signika";
+  }
+
+  p {
+    color: black;
+    font-family: "Signika";
+  }
+
+  li {
+    color: black;
+    font-family: "Signika";
+  }
+  @keyframes example {
+    from {
+      background-image: url(https://i.imgur.com/X9d9ldD.jpg);
+    }
+    to {
+      background-image: url(https://i.imgur.com/cIV3xyA.jpg);
+    }
+  }
+
+  .home {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 120wh;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes example1 {
+    from {
+      background-color: blueviolet;
+    }
+    to {
+      background-color: #b477ed;
+    }
+  }
+  footer.page-footer {
+    padding-top: 0;
+    text-align: right;
+    animation-name: example1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    min-width: 100vh;
+  }
+  .nav-wrapper {
+    animation-name: example1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    min-width: 100vh;
+  }
+
+  .hidden {
+    display: none;
+  }
+  .left {
+    color: white;
+    text-indent: left;
+    font-family: "Signika";
+    font-size: 16px;
+  }
+  .left:hover {
+    color: black;
+    font-family: "Signika";
+    font-size: 16px;
+  }
+
+  .smaller-row {
+    flex-grow: 3;
+    padding-top: 30px;
+    min-width: 100wh;
+  }
+
+  .about {
+    background-image: url(https://i.imgur.com/Fj8XJS9.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 120wh;
+  }
+  .saved {
+    background-image: url(https://i.imgur.com/0flxxZa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: swing 5s ease;
+    animation-iteration-count: infinite;
+  }
+  h2 {
+    color:white;
+    text-shadow: 2px 2px black;
+    font-family: "Signika";
+  }
+
+  h4 {
   color: black;
-}
-
-.landingpage:hover {
-  background-image: url(https://i.imgur.com/AYgxAlJ.jpg);
-}
-
-.card {
-  background-image: url(https://i.imgur.com/0flxxZa.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-::placeholder {
-  color: white;
-}
-
-.left-brand-logo {
+  text-shadow: 2px 2px white;
   font-family: "Signika";
   font-size: 30px;
-}
-
-.btn {
-  background-color: blueviolet;
-  color: white;
-}
-.btn:hover {
-  background-color: #B477ED;
-  color: white;
-}
-
-input.btn {
-  background-color: blueviolet;
-  color: white;
-}
-input.btn:hover {
-  background-color: #B477ED;
-  color: white;
-}
-
-p {
-  color: black;
-}
-
-li {
-  color: black;
-}
-@keyframes example {
-  from {
-    background-image: url(https://i.imgur.com/X9d9ldD.jpg);
   }
-  to {
-    background-image: url(https://i.imgur.com/cIV3xyA.jpg);
+  .right {
+    font-family: "Signika";
+    font-size: 16px;
+  }
+
+  .delete {
+    color: blue;
+    font-size: 20px;
+  }
+  .delete:hover {
+    color: blueviolet;
+    font-size: 24px;
   }
 }
 
-.home {
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-width: 120wh;
-  animation-name: example;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-}
 
-@keyframes example1 {
-  from {
-    background-color: blueviolet;
-  }
-  to {
-    background-color: #b477ed;
-  }
-}
-footer.page-footer {
-  padding-top: 0;
-  text-align: right;
-  animation-name: example1;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-}
-.nav-wrapper {
-  animation-name: example1;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-}
-
-.hidden {
-  display: none;
-}
-.left {
-  color: white;
-  text-indent:left;
-}
-.left:hover {
-  color: black;
-}
-
-.smaller-row {
-  flex-grow: 3;
-  padding-top: 30px;
-  min-width: 100wh;
-  }
-
-.about {
-  background-image: url(https://i.imgur.com/Fj8XJS9.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-width: 120wh;
-}
-}

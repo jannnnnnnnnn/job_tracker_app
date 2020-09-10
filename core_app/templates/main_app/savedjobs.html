@@ -1,6 +1,6 @@
 {% extends 'nav.html' %} {% block content %}
-
-<h1>Your saved jobs</h1>
+<body class="saved">
+<h2>Your saved jobs</h2>
 {% for job in savedjobs %}
     <div class="card">
         <div class="card-content">
@@ -13,8 +13,9 @@
     </div>
   </a>
   <a
-  href="{% url 'job_delete' job.id %}"
+  class="delete" href="{% url 'job_delete' job.id %}"
   >Delete</a
 ><br />
+</body>
 {% endfor %}
 {% endblock %}
