@@ -34,7 +34,6 @@ class Profile(models.Model):
         ('F', 'Female'),
         ('P', 'prefer not to answer'),
     )
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = PhoneField(blank=True, help_text='Contact phone number')
     city = models.CharField(max_length=50)
