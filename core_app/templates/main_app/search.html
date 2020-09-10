@@ -1,11 +1,7 @@
 {% extends 'nav.html' %} {% block content %}
+<body class="card1">
 <h1>Search for your career</h1>
-<style>
-  body {
-    color: black;
-  }
-</style>
-<h3>List of Jobs</h3>
+<h4>List of Jobs</h4>
 <ul>
 {% for job in listofjobs %}
   <li>
@@ -22,4 +18,5 @@
   </li>
 {% endfor  %}
 </ul>
+  </main>
 {% endblock %}
