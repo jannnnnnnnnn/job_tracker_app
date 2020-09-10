@@ -99,6 +99,10 @@ def home(request):
     return render(request, 'home.html')
 
 
+def about(request):
+    return render(request, 'about.html')
+
+
 def profile(request):
     profile = Profile.objects.get(user=request.user)
     # skills_profile_doesnt_have = Skill.objects.exclude(
