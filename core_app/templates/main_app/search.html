@@ -9,7 +9,7 @@
 <ul>
 {% for job in listofjobs %}
   <li>
-    <a hred="{{job.1}}"><h5>{{job.0}}</h5>
+    <a href="{{job.1}}"><h5>{{job.0}}</h5>
     <p>{{job.2}}</p>
     <p>{{job.3}}</p>
     <form method="post" action="{% url 'savejob' %}">
