@@ -8,11 +8,10 @@
   main {
     flex: 1 0 auto;
   }
-
-  h3 {
-    color: white;
-    text-shadow: 2px 2px black;
-    text-align: left, middle;
+  .profile {
+    background-image: url(https://i.imgur.com/JD2l5iq.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .landing {
@@ -53,7 +52,7 @@
     font-family: "Signika";
   }
   .card1:hover {
-    background-color: #F7FCFE;
+    background-color: #f7fcfe;
     animation-iteration-count: infinite;
     font-family: "Signika";
   }
@@ -91,8 +90,14 @@
   }
 
   p {
-    color: black;
+    color: white;
     font-family: "Signika";
+  }
+  #profile {
+    font-family: "Signika";
+    font-size: 16px;
+    text-shadow: 2px 2px black;
+    color: white;
   }
 
   li {
@@ -148,6 +153,7 @@
     text-indent: right;
     font-family: "Signika";
     font-size: 16px;
+    margin-left: 10px;
   }
   .left:hover {
     color: black;
@@ -162,7 +168,7 @@
   }
 
   .about {
-    background-image: url(https://i.imgur.com/Fj8XJS9.jpg);
+    background-image: url(https://i.imgur.com/dJ58xM7.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-width: 120wh;
@@ -178,6 +184,14 @@
     color: white;
     text-shadow: 2px 2px black;
     font-family: "Signika";
+  }
+
+  h3 {
+    color: white;
+    text-shadow: 4px 4px black;
+    font-family: "Signika";
+    text-overflow: inherit;
+    margin-left: -50px;
   }
 
   h4 {
@@ -205,5 +219,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-width: 120wh;
+  }
+
+  #search_box {
+    color: white;
+    text-shadow: 2px 2px black;
+    font-family: "Signika";
+    font-size: 20px;
   }
 }
