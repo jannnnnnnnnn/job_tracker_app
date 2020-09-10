@@ -139,9 +139,9 @@ def profile_create(request):
 
 def savedjobs(request):
     profile = Profile.objects.get(user=request.user)
-    savedjobs = profile.savedjobs
+    savedjobs = profile.savedjobs.all()
     print(savedjobs)
-    return render(request, 'main_app/savedjobs.html')
+    return render(request, 'main_app/savedjobs.html', {'savedjobs': savedjobs})
 
 
 def signup(request):

@@ -1,16 +1,16 @@
-{% extends 'nav.html' %} {% block content %} {% if object %}
-<h1>Edit <span class="teal-text">{{object.name}}</span></h1>
-{% else %}
+{% extends 'nav.html' %} {% block content %}
+
 <h1>Your saved jobs</h1>
-{% endif %}
-  <li>
-    <a href="{{ mergedtitleurl.1.2 }}"><h5>{{ mergedtitleurl.0.2 }}</h5></a>
-    <form method="post" action="{% url 'savedjobs' %}">
-      {% csrf_token %} {{ form.as_p }}
-      <input type="submit" class="btn" value="Save Job" />
-    </form>
-  </li>
-  <!-- Django requires the following for security purposes -->
-  {% csrf_token %}
-</form>
+{% for job in savedjobs %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">
+              <a hred="{{job.url}}"><h5>{{job.title}}</h5>
+            </span>
+            <p>Company: {{ job.company }}</p>
+            <p>Description: {{ job.description }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
 {% endblock %}
