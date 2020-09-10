@@ -13,11 +13,15 @@
     <p>{{job.2}}</p>
     <p>{{job.3}}</p>
     <form method="post" action="{% url 'savejob' %}">
-      {% csrf_token %} 
-      <div class="hidden">
-        {{ job.4.as_p }}
-      </div>
+        {% csrf_token %} 
+        <div class="hidden">
+          {{ job.4.as_p }}
+        </div>
+    {% if job.5 %}        
+      <input type="submit" class="btn" value="Saved" disabled/>  
+    {% else %}
       <input type="submit" class="btn" value="Save Job" />
+    {% endif %}
     </form>
   </li>
 {% endfor  %}
