@@ -138,6 +138,9 @@ def profile_create(request):
 
 
 def savedjobs(request):
+    profile = Profile.objects.get(user=request.user)
+    savedjobs = profile.savedjobs
+    print(savedjobs)
     return render(request, 'main_app/savedjobs.html')
 
 
