@@ -32,10 +32,15 @@ class Profile(models.Model):
     SEX = (
         ('M', 'Male'),
         ('F', 'Female'),
+        ('P', 'prefer not to answer'),
     )
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = PhoneField(blank=True, help_text='Contact phone number')
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.CharField(max_length=50)
+    # city = models.ForeignKey(City, on_delete=models.CASCADE, default='Toronto')
+    # city = models.CharField(
+    #     max_length=50, choices=cityChoices, blank=False, default="")
     # state = models.ForeignKey(Region, on_delete=models.CASCADE)
     zipcode = models.CharField(max_length=50)
     # country = models.ForeignKey(Country, on_delete=models.CASCADE)
