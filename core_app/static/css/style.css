@@ -46,11 +46,21 @@ h3 {
   font-family: "Signika";
   font-size: 30px;
 }
+
 .btn {
   background-color: blueviolet;
   color: white;
 }
 .btn:hover {
+  background-color: #B477ED;
+  color: white;
+}
+
+input.btn {
+  background-color: blueviolet;
+  color: white;
+}
+input.btn:hover {
   background-color: #B477ED;
   color: white;
 }
