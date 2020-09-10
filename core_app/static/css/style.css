@@ -29,7 +29,7 @@ main {
   min-width: 120wh;
   color: white;
   animation-name: example2;
-  animation-duration: 10s;
+  animation-duration: 15s;
   animation-iteration-count: infinite;
   transition-timing-function: linear;
 }
