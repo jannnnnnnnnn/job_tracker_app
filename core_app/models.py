@@ -37,7 +37,7 @@ class Profile(models.Model):
     phone = PhoneField(blank=True, help_text='Contact phone number')
     city = models.ForeignKey(City, on_delete=models.CASCADE)
     # state = models.ForeignKey(Region, on_delete=models.CASCADE)
-    postalcode = models.CharField(max_length=50)
+    zipcode = models.CharField(max_length=50)
     # country = models.ForeignKey(Country, on_delete=models.CASCADE)
     gender = models.CharField(
         max_length=1, choices=SEX, blank=False, default="")
