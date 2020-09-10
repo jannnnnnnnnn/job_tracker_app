@@ -1,3 +1,5 @@
+@media only screen and (min-width: 700px) {
+
 body {
   display: flex;
   min-height: 100vh;
@@ -8,6 +10,12 @@ main {
   flex: 1 0 auto;
 }
 
+h3 {
+  color: white;
+  text-shadow: 2px 2px black;
+  text-align: left, middle;
+}
+
 .landing {
   text-align: bottom;
   color: white;
@@ -15,27 +23,24 @@ main {
   margin-left: -40px;
   text-shadow: 2px 2px black;
 }
-@keyframes example2 {
-  from {
-    background-image: url(https://i.imgur.com/WMyiOID.jpg);
-  }
-  to {
-    background-image: url(https://i.imgur.com/AYgxAlJ.jpg);
-  }
-}
+
 .landingpage {
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 120wh;
-  color: white;
-  animation-name: example2;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  transition-timing-function: linear;
+  transition: background-image 5s ease-in-out;
+  background-image:url(https://i.imgur.com/WMyiOID.jpg);
 }
-h3 {
-  margin-top: 50px;
-  text-shadow: 2px 2px black;
+
+.landingpage.left {
+  color: white;
+  text-indent:left;
+}
+.landingpage.left:hover {
+  color: black;
+}
+
+.landingpage:hover {
+  background-image:url(https://i.imgur.com/AYgxAlJ.jpg);
 }
 
 ::placeholder {
@@ -133,4 +138,5 @@ footer.page-footer {
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 120wh;
+}
 }
