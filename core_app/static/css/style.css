@@ -1,5 +1,3 @@
-
-
 body {
   display: flex;
   min-height: 100vh;
@@ -10,8 +8,6 @@ main {
   flex: 1 0 auto;
 }
 
-https://i.imgur.com/AYgxAlJ.jpg
-
 .landing {
   text-align: bottom;
   color: white;
@@ -19,13 +15,23 @@ https://i.imgur.com/AYgxAlJ.jpg
   margin-left: -40px;
   text-shadow: 2px 2px black;
 }
-
+@keyframes example2 {
+  from {
+    background-image: url(https://i.imgur.com/WMyiOID.jpg);
+  }
+  to {
+    background-image: url(https://i.imgur.com/AYgxAlJ.jpg);
+  }
+}
 .landingpage {
-  background-image: url(https://i.imgur.com/WMyiOID.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 120wh;
   color: white;
+  animation-name: example2;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  transition-timing-function: linear;
 }
 h3 {
   margin-top: 50px;
@@ -40,11 +46,21 @@ h3 {
   font-family: "Signika";
   font-size: 30px;
 }
+
 .btn {
   background-color: blueviolet;
   color: white;
 }
 .btn:hover {
+  background-color: #B477ED;
+  color: white;
+}
+
+input.btn {
+  background-color: blueviolet;
+  color: white;
+}
+input.btn:hover {
   background-color: #B477ED;
   color: white;
 }
@@ -98,29 +114,23 @@ footer.page-footer {
 .hidden {
   display: none;
 }
+.left {
+  color: white;
+  text-indent:left;
+}
+.left:hover {
+  color: black;
+}
 
 .smaller-row {
   flex-grow: 3;
   padding-top: 30px;
   min-width: 100wh;
-
   }
-
-@keyframes example2 {
-  from {
-    background-image: url(https://i.imgur.com/Fj8XJS9.jpg);
-  }
-  to {
-    background-image: url(https://i.imgur.com/cIV3xyA.jpg);
-  }
-}
 
 .about {
-
+  background-image: url(https://i.imgur.com/Fj8XJS9.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 120wh;
-  animation-name: example;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
 }
