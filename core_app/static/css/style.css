@@ -53,7 +53,7 @@
     font-family: "Signika";
   }
   .card1:hover {
-    background-color: #DBDBDB;
+    background-color: #F7FCFE;
     animation-iteration-count: infinite;
     font-family: "Signika";
   }
@@ -145,7 +145,7 @@
   }
   .left {
     color: white;
-    text-indent: left;
+    text-indent: right;
     font-family: "Signika";
     font-size: 16px;
   }
@@ -175,16 +175,16 @@
     animation-iteration-count: infinite;
   }
   h2 {
-    color:white;
+    color: white;
     text-shadow: 2px 2px black;
     font-family: "Signika";
   }
 
   h4 {
-  color: black;
-  text-shadow: 2px 2px white;
-  font-family: "Signika";
-  font-size: 30px;
+    color: black;
+    text-shadow: 2px 2px white;
+    font-family: "Signika";
+    font-size: 30px;
   }
   .right {
     font-family: "Signika";
@@ -199,6 +199,11 @@
     color: blueviolet;
     font-size: 24px;
   }
+
+  .deleted {
+    background-image: url(https://i.imgur.com/mN3UYqX.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 120wh;
+  }
 }
-
-
