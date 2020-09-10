@@ -1,14 +1,17 @@
 {% extends 'nav.html' %} {% block content %}
 <h2>Build your profile</h2>
-<p>Name: {{ profile.user.first_name }}</p>
-<p>Name: {{ profile.user.last_name }}</p>
-<p>Name: {{ profile.user.email }}</p>
+<p>First Name: {{ profile.user.first_name }}</p>
+<p>Last Name: {{ profile.user.last_name }}</p>
+<p>Email: {{ profile.user.email }}</p>
 <p>Phone: {{ profile.phone }}</p>
 <p>City: {{ profile.city }}</p>
 <p>Postal code: {{ profile.zipcode }}</p>
 <p>Gender: {{ profile.gender }}</p>
 <p>Skills:</p>
-{% for skill in profile.skills.all %} {{ skill.name}}<br />
+{% for skill in profile.skills.all %} {{ skill.name}}<br /><a
+  href="{% url 'skill_delete' skill.id %}"
+  >Delete</a
+><br />
 {% endfor %}
 
 <p>Industries:</p>
