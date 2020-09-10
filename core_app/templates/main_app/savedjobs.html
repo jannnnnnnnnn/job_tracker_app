@@ -12,5 +12,9 @@
         </div>
     </div>
   </a>
+  <a
+  href="{% url 'job_delete' job.id %}"
+  >Delete</a
+><br />
 {% endfor %}
 {% endblock %}

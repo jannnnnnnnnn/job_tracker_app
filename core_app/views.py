@@ -197,3 +197,13 @@ def savejob(request):
     this_job = Savedjob.objects.get(id=new_job.id)
     profile.savedjobs.add(this_job)
     return redirect('search')
+
+
+class SkillDelete(DeleteView):
+    model = Skill
+    success_url = '/profile/'
+
+
+class JobDelete(DeleteView):
+    model = Savedjob
+    success_url = '/savedjobs/'
