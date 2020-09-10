@@ -9,7 +9,7 @@
     flex: 1 0 auto;
   }
   .profile {
-    background-image: url(https://i.imgur.com/JD2l5iq.jpg);
+    background-image: url(https://i.imgur.com/HyvEz9k.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -43,16 +43,23 @@
   .landingpage:hover {
     background-image: url(https://i.imgur.com/AYgxAlJ.jpg);
   }
+
+  .landingtext {
+    font-family: "Signika";
+    font-size: 16px;
+    text-shadow: 2px 2px black;
+    color: white;
+  }
   .card1 {
     background-color: white;
     background-size: cover;
-    transition: background-color 8s ease-in-out;
+    transition: 8s ease-in-out;
     min-width: 100vh;
     animation-iteration-count: infinite;
     font-family: "Signika";
   }
   .card1:hover {
-    background-color: #f7fcfe;
+    background-color: #eef8fd;
     animation-iteration-count: infinite;
     font-family: "Signika";
   }
@@ -78,21 +85,11 @@
     font-family: "Signika";
   }
 
-  input.btn {
-    background-color: blueviolet;
-    color: white;
-    font-family: "Signika";
-  }
-  input.btn:hover {
-    background-color: #b477ed;
-    color: white;
+  p {
+    color: black;
     font-family: "Signika";
   }
 
-  p {
-    color: white;
-    font-family: "Signika";
-  }
   #profile {
     font-family: "Signika";
     font-size: 16px;
@@ -100,10 +97,6 @@
     color: white;
   }
 
-  li {
-    color: black;
-    font-family: "Signika";
-  }
   @keyframes example {
     from {
       background-image: url(https://i.imgur.com/X9d9ldD.jpg);
@@ -223,8 +216,15 @@
 
   #search_box {
     color: white;
-    text-shadow: 2px 2px black;
     font-family: "Signika";
     font-size: 20px;
+  }
+  input#search_box {
+    font-family: "Signika";
+    font-size: 16px;
+    color: white;
+  }
+  #skill {
+    color: white;
   }
 }

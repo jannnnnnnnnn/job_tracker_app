@@ -69,7 +69,10 @@ def search(request):
 
     listofjobs = []
     number = len(mergedtitleurl[0])-1
+<<<<<<< HEAD
 
+=======
+>>>>>>> joe
     for i in range(number):
         newjob = [mergedtitleurl[0][i], mergedtitleurl[1]
                   [i], mergedtitleurl[2][i], mergedtitleurl[3][i], "", False]

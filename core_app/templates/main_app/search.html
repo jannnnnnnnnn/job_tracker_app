@@ -1,6 +1,11 @@
 {% extends 'nav.html' %} {% block content %}
 <body class="card1">
 <h1>Search for your career</h1>
+<style>
+  body {
+    color: black;
+  }
+</style>
 <h4>List of Jobs</h4>
 <ul>
 {% for job in listofjobs %}
@@ -14,7 +19,11 @@
           {{ job.4.as_p }}
         </div>
     {% if job.5 %}        
+<<<<<<< HEAD
       <input type="submit" class="btn" value="Saved" disabled/>  
+=======
+      <input type="submit" class="btn" value="Saved">  
+>>>>>>> joe
     {% else %}
       <input type="submit" class="btn" value="Save Job" />
     {% endif %}
@@ -22,5 +31,5 @@
   </li>
 {% endfor  %}
 </ul>
-  </main>
+</body>
 {% endblock %}
