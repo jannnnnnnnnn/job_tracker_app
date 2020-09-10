@@ -69,23 +69,21 @@ def search(request):
 
     listofjobs = []
     number = len(mergedtitleurl[0])-1
-    print("my number is ")
-    print(number)
     for i in range(number):
         newjob = [mergedtitleurl[0][i], mergedtitleurl[1]
-                  [i], mergedtitleurl[2][i], mergedtitleurl[3][i], ""]
+                  [i], mergedtitleurl[2][i], mergedtitleurl[3][i], "", False]
         listofjobs.append(newjob)
 
-    print(listofjobs[0])
-    print(listofjobs[10])
+    # print(listofjobs[0])
+    # print(listofjobs[10])
     savejob_forms = []
     for i in range(number):
         savejob_form = SavedjobForm(
             {'title': listofjobs[i][0], 'url': listofjobs[i][1], 'company': listofjobs[i][2], 'description': listofjobs[i][3]})
         listofjobs[i][4] = savejob_form
-        # savejob_forms.append(savejob_form)
-    # savejob_form = SavedjobForm({
-    #     'title': mergedtitleurl[0][0], 'url': mergedtitleurl[1][0], 'company': mergedtitleurl[2][0], 'description': mergedtitleurl[3][0]})
+        savestatus = profile.savedjobs.filter(url=listofjobs[i][1]).count()
+        if savestatus > 0:
+            listofjobs[i][5] = True
 
     return render(request, 'main_app/search.html', {'mergedtitleurl': mergedtitleurl, 'range': range(30), 'savejob_forms': savejob_forms, 'listofjobs': listofjobs})
 
