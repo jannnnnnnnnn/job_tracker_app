@@ -1,8 +1,8 @@
 <strong>Athena</strong>
 
-This app is intended for the morden web developer searching for a job. The user is able to search for jobs, save jobs they are interested in, delete jobs, as well as adding and deleting skills in a profile.
+This app is intended for the modern web developer (or any job seeker) searching for a job. The user is able to search for jobs, save jobs they are interested in, delete jobs, as well as adding and deleting skills in a profile.
 
-As the admin, I can add in any additional albums that get released in future. I can also moderate the comments and block any IP address of trolls.
+Users are also able to login and logout.
 
 <strong>Screenshots</strong>
 
