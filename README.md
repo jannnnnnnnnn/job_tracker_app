@@ -6,7 +6,7 @@ Users are also able to login and logout.
 
 <strong>Screenshots</strong>
 
-[Please see our YouTube video on how to use the app](https://youtu.be/rluO0hbqLRw)
+[Please see our YouTube video on how to use the app](https://youtu.be/bHzybWA5S9M)
 
 
 <strong>Technologies Used</strong>
@@ -35,7 +35,7 @@ Users are also able to login and logout.
 * Provide users with the ability to receive auto-matches based on their profile and saved jobs.
 
 <strong>Heroku link</strong>
-* 
+* [Heroku](https://git.heroku.com/athena-jobtracker.git)
 
 <strong>Getting started</strong>
 
