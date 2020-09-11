@@ -8,6 +8,8 @@ Users are also able to login and logout.
 
 [Please see our YouTube video on how to use the app](https://youtu.be/bHzybWA5S9M)
 
+<img src="athenascreenshot.JPG">
+
 <strong>Technologies Used</strong>
 
 - CSS3
@@ -34,7 +36,11 @@ Users are also able to login and logout.
 
 <strong>Heroku link</strong>
 
+<<<<<<< HEAD
 - [Heroku](https://athena-jobtracker-app.herokuapp.com/)
+=======
+- [Heroku](https://athenajobtracker.herokuapp.com/)
+>>>>>>> 1f6383904a87587281bc0a9e1d22ad94a797b58a
 
 <strong>Getting started</strong>
 
