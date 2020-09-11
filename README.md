@@ -43,4 +43,4 @@ Users are also able to login and logout.
 
 * [Wireframe](https://docs.google.com/document/d/12_D1nOmH7CyhQqCpHXvByKnpijCBPFnKPaunA6etTXI/edit)
 
-* [Jira Board] (https://janethan.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=P3&view=planning.nodetail&selectedIssue=P3-13&issueLimit=100)
+* [Jira Board](https://janethan.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=P3&view=planning.nodetail&selectedIssue=P3-13&issueLimit=100)
