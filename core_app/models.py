@@ -43,8 +43,8 @@ class Profile(models.Model):
     # state = models.ForeignKey(Region, on_delete=models.CASCADE)
     zipcode = models.CharField(max_length=50)
     # country = models.ForeignKey(Country, on_delete=models.CASCADE)
-    gender = models.CharField(
-        max_length=1, choices=SEX, blank=True, default="")
+    # gender = models.CharField(
+    #     max_length=1, choices=SEX, blank=True, default="")
     skills = models.ManyToManyField(Skill)
     industries = models.ManyToManyField(Industry)
     savedjobs = models.ManyToManyField(Savedjob)
