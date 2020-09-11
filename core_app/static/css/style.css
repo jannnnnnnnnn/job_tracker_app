@@ -207,6 +207,13 @@
     font-family: "Signika";
     font-size: 30px;
   }
+
+  h5 {
+    color: black;
+    text-shadow: 2px 2px #eef8fd;
+    font-family: "Signika";
+    font-size: 30px;
+  }
   .right {
     font-family: "Signika";
     font-size: 16px;
