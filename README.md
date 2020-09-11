@@ -7,7 +7,8 @@ Users are also able to login and logout.
 <strong>Screenshots</strong>
 
 [Please see our YouTube video on how to use the app](https://youtu.be/bHzybWA5S9M)
-(athenascreenshot.JPG)
+
+<img src="athenascreenshot.JPG">
 
 <strong>Technologies Used</strong>
 
