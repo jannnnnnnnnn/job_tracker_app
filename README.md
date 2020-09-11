@@ -8,6 +8,8 @@ Users are also able to login and logout.
 
 [Please see our YouTube video on how to use the app](https://youtu.be/bHzybWA5S9M)
 
+athenascreenshot.JPG
+
 <strong>Technologies Used</strong>
 
 - CSS3
