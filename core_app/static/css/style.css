@@ -90,6 +90,20 @@
     font-family: "Signika";
   }
 
+  h5 {
+    font-family: "Signika";
+    text-shadow: 2px 2px black;
+    color: white;
+  }
+
+  #cardimage {
+    background-color: transparent;
+  }
+
+  .right {
+    display: inline;
+  }
+
   #profile {
     font-family: "Signika";
     font-size: 16px;

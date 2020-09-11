@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 # Define the home view
+from django.contrib.auth.models import User
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Industry, Skill, Savedjob
@@ -107,15 +108,16 @@ def profile(request):
     #     id__in=profile.currentskill_set.all().values_list('id'))
 
     # We need skill template forms to be rendered in the template, and we need industry form to render in ProfileUpdate
+    # profile_form = ProfileForm()
     skill_form = SkillForm()
     user_form = UserForm()
-    # industry_form=IndustryForm()
+    industry_form = IndustryForm()
 
     return render(request, 'main_app/profile.html', {
         'profile': profile,
         'skill_form': skill_form,
-        'user_form': user_form
-        # 'skills': skills_profile_doesnt_have
+        'user_form': user_form,
+        'industry_form': industry_form
     })
 
 
@@ -159,7 +161,7 @@ def signup(request):
 
 class ProfileCreate(CreateView):
     model = Profile
-    fields = ['phone', 'city', 'gender', 'zipcode']
+    fields = ['phone', 'city', 'zipcode']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -173,6 +175,12 @@ class ProfileUpdate(UpdateView):
     success_url = '/profile/'
 
 
+class UserUpdate(UpdateView):
+    model = User
+    fields = ['first_name', 'last_name', 'email']
+    success_url = '/profile/'
+
+
 def add_skill(request):
     print("i am in add_skill")
     form = SkillForm(request.POST)
@@ -182,6 +190,18 @@ def add_skill(request):
     profile = Profile.objects.get(user=request.user)
     this_skill = Skill.objects.get(id=new_skill.id)
     profile.skills.add(this_skill)
+    return redirect('profile')
+
+
+def add_industry(request):
+    print("i am in add_industry")
+    form = IndustryForm(request.POST)
+    if form.is_valid():
+        new_industry = form.save(commit=False)
+        new_industry.save()
+    profile = Profile.objects.get(user=request.user)
+    this_industry = Industry.objects.get(id=new_industry.id)
+    profile.industries.add(this_industry)
     return redirect('profile')
 
 
@@ -199,6 +219,11 @@ def savejob(request):
 
 class SkillDelete(DeleteView):
     model = Skill
+    success_url = '/profile/'
+
+
+class IndustryDelete(DeleteView):
+    model = Industry
     success_url = '/profile/'
 
 

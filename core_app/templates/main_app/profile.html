@@ -1,31 +1,66 @@
 {% extends 'nav.html' %} {% block content %}
 <body class="profile">
   <h2>Build your profile</h2>
-  <p id="profile">First Name: {{ profile.user.first_name }}</p>
-  <p id="profile">Last Name: {{ profile.user.last_name }}</p>
-  <p id="profile">Email: {{ profile.user.email }}</p>
+  <div class="card" id="cardimage">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src=""/>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"
+        >  <h5>First Name: {{ profile.user.first_name }}</h5>
+        <h5>Last Name: {{ profile.user.last_name }}</h5>
+        <h5>Email: {{ profile.user.email }}</h5>
+        <i class="material-icons right">Edit</i></span
+      >
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"
+        >Edit Info<i class="material-icons right">close</i></span
+      >
+      <p><form id="update" action="{% url 'user_update' user.id %}" method="post">
+    {% csrf_token %} {{ user_form.as_p }}
+    <input type="submit" class="btn" value="Update" />
+  </form>
+      </p>
+    </div>
+  </div>
+
+
   <p id="profile">Phone: {{ profile.phone }}</p>
   <p id="profile">City: {{ profile.city }}</p>
   <p id="profile">Postal code: {{ profile.zipcode }}</p>
-  <p id="profile">Gender: {{ profile.gender }}</p>
-  <p id="profile">Skills:</p>
-  <p id="profile">{% for skill in profile.skills.all %} {{ skill.name}}</p>
-  <a class="btn" href="{% url 'skill_delete' skill.id %}">Delete</a><br />
-  {% endfor %}
-
-  <p id="profile">Industries:</p>
-  <p id="profile">
-    {% for industry in profile.industries.all %} {{ industry.name}}
-  </p>
-  <br />
-  {% endfor %}
-  <button>
+  <button class="btn">
     <a href="{% url 'profile_update' profile.id %}">Edit Profile</a>
-  </button>
+  </button><hr>
 
-  <form id="skill" action="{% url 'add_skill' %}" method="post">
+  <h5>Skills:</h5>
+
+  {% for skill in profile.skills.all %}
+  <p id="profile">
+    {{ skill.name}}
+    <a class="delete" href="{% url 'skill_delete' skill.id %}">
+      <i class="material-icons">delete</i>
+    </a>
+  </p>
+
+  {% endfor %}
+  <form id="profile" action="{% url 'add_skill' %}" method="post">
     {% csrf_token %} {{ skill_form.as_p }}
     <input type="submit" class="btn" value="Add Skill" />
   </form>
+
+  <h5>Industries:</h5>
+  {% for industry in profile.industries.all %}
+  <p id="profile">
+    {{ industry.name }}
+    <a class="delete" href="{% url 'industry_delete' industry.id %}">
+      <i class="material-icons">delete</i>
+    </a>
+  </p>
+  {% endfor %}
+  <form id="profile" action="{% url 'add_industry' %}" method="post">
+    {% csrf_token %} {{ industry_form.as_p }}
+    <input type="submit" class="btn" value="Add Industry" />
+  </form>
 </body>
-{{alltitles}}{% endblock %}
+{% endblock %}
