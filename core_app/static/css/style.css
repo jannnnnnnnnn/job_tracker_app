@@ -227,4 +227,8 @@
   #skill {
     color: white;
   }
+  .howto {
+    color: #b477ed;
+    font-size: 36px;
+  }
 }
