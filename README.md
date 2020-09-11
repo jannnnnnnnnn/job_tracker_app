@@ -34,7 +34,7 @@ Users are also able to login and logout.
 
 <strong>Heroku link</strong>
 
-- [Heroku](https://athena-jobtracker.herokuapp.com/)
+- [Heroku](https://athena-jobtracker-app.herokuapp.com/)
 
 <strong>Getting started</strong>
 
