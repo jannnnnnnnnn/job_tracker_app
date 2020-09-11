@@ -9,13 +9,19 @@
             </span>
             <p>Company: {{ job.company }}</p>
             <p>Description: {{ job.description }}</p>
-        </div>
+        <a class="delete right" href="{% url 'job_delete' job.id %}">
+    <span>Delete</span><i class="material-icons">delete</i>
+  </a>
+</div>
+        
     </div>
   </a>
-  <a
-  class="delete" href="{% url 'job_delete' job.id %}"
-  >Delete</a
-><br />
+  
+  <br />
 </body>
 {% endfor %}
 {% endblock %}
+
+
+
+  
