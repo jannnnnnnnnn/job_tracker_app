@@ -36,7 +36,7 @@ class Profile(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = PhoneField(blank=True, help_text='Contact phone number')
-    city = models.CharField(max_length=50)
+    city = models.CharField(max_length=50, blank=True)
     # city = models.ForeignKey(City, on_delete=models.CASCADE, default='Toronto')
     # city = models.CharField(
     #     max_length=50, choices=cityChoices, blank=False, default="")
@@ -44,7 +44,7 @@ class Profile(models.Model):
     zipcode = models.CharField(max_length=50)
     # country = models.ForeignKey(Country, on_delete=models.CASCADE)
     gender = models.CharField(
-        max_length=1, choices=SEX, blank=False, default="")
+        max_length=1, choices=SEX, blank=True, default="")
     skills = models.ManyToManyField(Skill)
     industries = models.ManyToManyField(Industry)
     savedjobs = models.ManyToManyField(Savedjob)
